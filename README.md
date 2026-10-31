@@ -86,12 +86,19 @@ css/
 ### 1. Installation
 Clone the repository and install required packages:
 ```bash
-git clone https://github.com/<YOUR_USERNAME>/<YOUR_REPO_NAME>.git
-cd <YOUR_REPO_NAME>
+git clone https://github.com/Cssatam/RollingShutterCorrection.git
+cd RollingShutterCorrection
 pip install -r requirements.txt
 ```
 
-### 2. Download Pretrained Checkpoint & Test Subset
+### 2. Instant Demo (1-Click Test)
+Run the self-contained demo on sample rolling shutter distortion:
+```bash
+python demo.py
+```
+*(Outputs `demo_result.png` showing the input vs corrected comparison).*
+
+### 3. Download Pretrained Checkpoint & Test Subset
 Download sample test pairs from the official RS-Real dataset:
 ```bash
 # Download 50 real test samples for quick benchmark
