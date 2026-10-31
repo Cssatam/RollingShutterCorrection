@@ -1,0 +1,21 @@
+# Core Deep Learning Framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Scientific Computing & Data Processing
+numpy>=1.22.0
+scikit-image>=0.20.0
+pyyaml>=6.0
+
+# Plotting & Visualization
+matplotlib>=3.6.0
+Pillow>=9.4.0
+tqdm>=4.65.0
+opencv-python-headless>=4.7.0
+
+# Optional: Baseline & Diffusion Infrastructure (RS-Diffusion evaluation)
+huggingface_hub>=0.16.0
+einops>=0.6.0
+accelerate>=0.20.0
+ema-pytorch>=0.2.0
+timm>=0.9.0

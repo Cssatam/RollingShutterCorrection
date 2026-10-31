@@ -1,0 +1,17 @@
+{
+  "num_test_samples": 999,
+  "uncorrected_mean_psnr": 15.888071172278346,
+  "uncorrected_mean_ssim": 0.49072966559811515,
+  "warped_mean_psnr": 16.979247038264315,
+  "warped_mean_ssim": 0.5535358670685027,
+  "refined_mean_psnr": 17.548496046369856,
+  "refined_mean_ssim": 0.5785520684283536,
+  "mean_flow_epe_px": 3.7059049846770407,
+  "crop_analysis": {
+    "0px_crop_psnr": 17.548496046369856,
+    "8px_crop_psnr": 18.694815380402467,
+    "16px_crop_psnr": 18.999740591458718,
+    "24px_crop_psnr": 19.023008693460543
+  },
+  "evaluation_time_sec": 8.661474466323853
+}

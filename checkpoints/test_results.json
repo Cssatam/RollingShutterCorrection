@@ -1,0 +1,8 @@
+{
+  "epochs": 40,
+  "best_val_loss": 0.036888372525572775,
+  "test_mean_psnr_dB": 34.073666215845726,
+  "test_mean_ssim": 0.9915259544054668,
+  "training_time_minutes": 7.2091802279154455,
+  "losses_used": "Charbonnier + SSIM + VGG-Perceptual + MultiScale-Flow"
+}

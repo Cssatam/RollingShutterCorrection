@@ -1,0 +1,95 @@
+# ==============================================================================
+# Git Ignore Configuration: Rolling Shutter Correction (RSC) Project
+# ==============================================================================
+
+# --- Datasets & Raw Image Archives (Crucial: Keep repository light) ---
+data/
+data/**
+RS_Real/
+RS-Real/
+*.npz
+*.npy
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.tmp
+*.bin
+
+# --- Checkpoints & Model Weights (GitHub 100MB hard limit / Git LFS) ---
+# Note: Checkpoints can be shared via GitHub Releases or Google Drive / Hugging Face.
+# If you wish to commit the small 12.9MB .pt files, comment out the line below.
+*.pt
+*.pth
+*.onnx
+*.engine
+*.bin
+*.ckpt
+
+# Keep lightweight benchmark metric logs and JSON files
+!checkpoints/*.json
+!checkpoints_real/*.json
+
+# Keep select essential documentation comparison plots (optional: un-comment to track)
+# !checkpoints/visual_comparison_v3.png
+# !checkpoints_real/real_benchmark_visual_comparison.png
+# !checkpoints_real/detached_black_border_comparison.png
+
+# --- Python & Bytecode Caches ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Jupyter Notebook Artifacts ---
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*-checkpoint.ipynb
+
+# --- External Cloned Sub-repositories ---
+# RS-Diffusion contains its own upstream git repository
+RS-Diffusion/
+
+# --- Virtual Environments ---
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# --- IDE & OS Specific Files ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Temporary Logs & Debug Traces ---
+*.log
+logs/
+wandb/
+.system_generated/
+scratch/

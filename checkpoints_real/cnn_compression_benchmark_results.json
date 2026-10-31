@@ -1,0 +1,151 @@
+{
+  "uncorrected": {
+    "psnr": 15.532222248090068,
+    "ssim": 0.4929686665534973
+  },
+  "results": [
+    {
+      "method": "Baseline fp32",
+      "steps": "1 (feed-forward)",
+      "sparsity": "0.0%",
+      "size_mb": 4.28,
+      "compression": "1.0x",
+      "latency_ms": 3.51,
+      "fps": 284.9,
+      "psnr": 18.74,
+      "delta_psnr": "0",
+      "ssim": 0.606,
+      "epe": 4.0
+    },
+    {
+      "method": "fp16 (autocast)",
+      "steps": "1 (feed-forward)",
+      "sparsity": "0.0%",
+      "size_mb": 2.14,
+      "compression": "2.0x",
+      "latency_ms": 4.23,
+      "fps": 236.3,
+      "psnr": 18.75,
+      "delta_psnr": "+0.00 \u00b1 0.00",
+      "ssim": 0.606,
+      "epe": 3.999
+    },
+    {
+      "method": "fp16 (half weights)",
+      "steps": "1 (feed-forward)",
+      "sparsity": "0.0%",
+      "size_mb": 2.14,
+      "compression": "2.0x",
+      "latency_ms": 4.14,
+      "fps": 241.6,
+      "psnr": 18.75,
+      "delta_psnr": "+0.00 \u00b1 0.00",
+      "ssim": 0.6058,
+      "epe": 4.0
+    },
+    {
+      "method": "W8 weights",
+      "steps": "1 (feed-forward)",
+      "sparsity": "0.0%",
+      "size_mb": 1.07,
+      "compression": "4.0x",
+      "latency_ms": 3.95,
+      "fps": 253.2,
+      "psnr": 18.75,
+      "delta_psnr": "+0.00 \u00b1 0.03",
+      "ssim": 0.606,
+      "epe": 3.996
+    },
+    {
+      "method": "W8A8 (weights+activations)",
+      "steps": "1 (feed-forward)",
+      "sparsity": "0.0%",
+      "size_mb": 1.07,
+      "compression": "4.0x",
+      "latency_ms": 7.62,
+      "fps": 131.2,
+      "psnr": 18.74,
+      "delta_psnr": "-0.01 \u00b1 0.03",
+      "ssim": 0.605,
+      "epe": 3.996
+    },
+    {
+      "method": "W4 weights",
+      "steps": "1 (feed-forward)",
+      "sparsity": "0.0%",
+      "size_mb": 0.54,
+      "compression": "8.0x",
+      "latency_ms": 4.09,
+      "fps": 244.5,
+      "psnr": 18.15,
+      "delta_psnr": "-0.59 \u00b1 0.45",
+      "ssim": 0.598,
+      "epe": 4.422
+    },
+    {
+      "method": "Prune 30%",
+      "steps": "1 (feed-forward)",
+      "sparsity": "30.0%",
+      "size_mb": 4.28,
+      "compression": "1.0x",
+      "latency_ms": 3.64,
+      "fps": 275.1,
+      "psnr": 16.84,
+      "delta_psnr": "-1.90 \u00b1 0.82",
+      "ssim": 0.5582,
+      "epe": 6.593
+    },
+    {
+      "method": "Prune 50%",
+      "steps": "1 (feed-forward)",
+      "sparsity": "50.0%",
+      "size_mb": 4.28,
+      "compression": "1.0x",
+      "latency_ms": 3.63,
+      "fps": 275.6,
+      "psnr": 13.14,
+      "delta_psnr": "-5.60 \u00b1 0.87",
+      "ssim": 0.4326,
+      "epe": 16.93
+    },
+    {
+      "method": "Prune 70%",
+      "steps": "1 (feed-forward)",
+      "sparsity": "70.0%",
+      "size_mb": 4.28,
+      "compression": "1.0x",
+      "latency_ms": 3.69,
+      "fps": 271.3,
+      "psnr": 16.1,
+      "delta_psnr": "-2.64 \u00b1 0.76",
+      "ssim": 0.5188,
+      "epe": 7.435
+    },
+    {
+      "method": "Prune 30% + W8",
+      "steps": "1 (feed-forward)",
+      "sparsity": "30.0%",
+      "size_mb": 0.88,
+      "compression": "4.8x",
+      "latency_ms": 4.09,
+      "fps": 244.3,
+      "psnr": 16.82,
+      "delta_psnr": "-1.92 \u00b1 0.82",
+      "ssim": 0.5576,
+      "epe": 6.589
+    },
+    {
+      "method": "Prune 50% + W8",
+      "steps": "1 (feed-forward)",
+      "sparsity": "50.0%",
+      "size_mb": 0.67,
+      "compression": "6.4x",
+      "latency_ms": 3.7,
+      "fps": 270.1,
+      "psnr": 13.14,
+      "delta_psnr": "-5.60 \u00b1 0.87",
+      "ssim": 0.4324,
+      "epe": 16.969
+    }
+  ]
+}
