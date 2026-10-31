@@ -128,7 +128,11 @@ Input: RS Image (4-ch: RGB + Y_norm) [B, 4, 64, 64]
 | **Refinement Conv2**| Conv2d(32, 32, 3x3, dilation=2, padding=2) + ReLU | `(B, 32, 256, 256)` | 9,248 |
 | **Refinement Conv3**| Conv2d(32, 3, 3x3, padding=1) | `(B, 3, 256, 256)` | 867 |
 | **Subtotal Refine** | **BorderRefinementHead Total Parameters** | — | **12,099 (~0.012M)** |
-| **Grand Total** | **Full Trainable Parameter Count** | — | **1,122,437 (~1.12M)** |
+| **Grand Total** | **Full Trainable Parameter Count** | — | **1,122,019 (~1.12M)** |
+| **Computational Cost** | **Forward GFLOPs / GMACs (256×256)** | — | **2.995 GFLOPs (1.498 GMACs)** |
+| **FP32 Dense Model Size**| **Uncompressed Weights File** | — | **4.28 MB** |
+| **INT8 Quantized Size** | **W8 / W8A8 Weights File** | — | **1.07 MB** |
+| **Throughput & Latency**| **GPU (RTX 3080 Ti) / CPU (x86-64)** | — | **284.9 FPS (3.51 ms) / 44.9 FPS (22.28 ms)** |
 
 ---
 
@@ -329,9 +333,11 @@ To directly evaluate the compression capabilities of the proposed lightweight CN
 | Evaluation Metric | Baseline RS-Diffusion (AAAI 2025) | Proposed Lightweight CNN (This Work) | Architectural Advantage |
 | :--- | :---: | :---: | :--- |
 | **Parameter Count** | 79,880,000 (~79.9M) | **1,122,019 (~1.12M)** | **71.2× fewer parameters** |
+| **Computational Complexity** | ~240 GFLOPs (8 steps) | **2.995 GFLOPs (1.498 GMACs)** | **80× lower compute demand** |
 | **Dense fp32 File Size** | 319.5 MB | **4.28 MB** | **74.6× storage reduction** |
-| **Inference Latency** | 186.0 ms (8 steps) / 37.0 ms (1 step) | **3.51 ms** | **10.5× to 53.0× faster** |
-| **Throughput** | 5.4 FPS (8 steps) / 27.1 FPS (1 step) | **284.9 FPS** | **True high-speed real-time** |
+| **Inference Latency (GPU)**| 186.0 ms (8 steps) / 37.0 ms (1 step) | **3.51 ms** | **10.5× to 53.0× faster** |
+| **Throughput (GPU)** | 5.4 FPS (8 steps) / 27.1 FPS (1 step) | **284.9 FPS** | **True high-speed real-time** |
+| **Throughput (CPU)** | <0.5 FPS (8 steps) / ~2.2 FPS (1 step) | **44.9 FPS (22.28 ms)** | **Real-time without GPU accelerator** |
 | **W8 Quantization Penalty** | −0.07 dB | **+0.00 dB (Completely lossless)** | Full retention of dynamic range |
 | **W8A8 Quantization Penalty** | **−0.90 dB (Noticeable degradation)** | **−0.01 dB (Virtually zero penalty)**| Tightly conditioned activations |
 | **W4 Quantization Penalty** | **−4.28 dB (Severe model collapse)** | **−0.59 dB (Remains functional)** | Resilient coarse-to-fine structure |
